@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Registro de Usuário</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Registro</h2>
+    <% if (erro) { %>
+      <p class="error"><%= erro %></p>
+    <% } %>
+    <form method="POST" action="/register">
+      <label>Nome:</label>
+      <input type="text" name="nome" required>
+      
+      <label>Email:</label>
+      <input type="email" name="email" required>
+      
+      <label>Senha:</label>
+      <input type="password" name="senha" required>
+      
+      <input type="submit" value="Registrar">
+    </form>
+    <p style="text-align: center;"><a href="/login">Já possui uma conta? Faça login</a></p>
+  </div>
+</body>
+</html>

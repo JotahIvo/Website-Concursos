@@ -1,0 +1,99 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo para o body */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* Container principal para centralizar o conteúdo */
+.container {
+  background: #fff;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  margin: 20px;
+}
+
+/* Títulos */
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #007BFF;
+}
+
+/* Estilo para o formulário */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="email"],
+input[type="password"] {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* Botões */
+button, input[type="submit"] {
+  padding: 10px;
+  background: #007BFF;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+button:hover, input[type="submit"]:hover {
+  background: #0056b3;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: #007BFF;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Lista na página inicial */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Mensagens de erro */
+.error {
+  color: red;
+  text-align: center;
+  margin-bottom: 15px;
+}

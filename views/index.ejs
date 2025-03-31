@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Área do Usuário</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    /* Estilizações básicas para aprimorar a interface */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    header {
+      text-align: center;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #ddd;
+    }
+    header h1 {
+      margin: 0;
+      color: #333;
+    }
+    nav ul.nav-links {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    nav ul.nav-links li a {
+      text-decoration: none;
+      color: #007BFF;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    nav ul.nav-links li a:hover {
+      color: #0056b3;
+    }
+    main {
+      margin-top: 30px;
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .service {
+      background: #fafafa;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      width: 300px;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+    .service:hover {
+      transform: translateY(-5px);
+    }
+    .service-link {
+      display: block;
+      color: inherit;
+      text-decoration: none;
+      padding: 20px;
+    }
+    .service img {
+      max-width: 80px;
+      margin-bottom: 10px;
+    }
+    .service h2 {
+      margin: 10px 0 5px;
+      color: #333;
+    }
+    .service p {
+      color: #666;
+      font-size: 0.95em;
+    }
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      border-top: 1px solid #ddd;
+      padding-top: 20px;
+    }
+    .logout-btn {
+      color: #d9534f;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .logout-btn:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Bem-vindo, <%= nome %>!</h1>
+    </header>
+    <main>
+      <div class="service">
+        <a class="service-link" href="/assistente_concursos?token=<%= tokenConcursos %>">
+          <!-- Substitua a imagem pelo ícone desejado -->
+          <img src="/images/assistente.png" alt="Assistente para Concursos">
+          <h2>Assistente para Concursos</h2>
+          <p>Receba suporte para estudos e preparação para concursos.</p>
+        </a>
+      </div>
+      <div class="service">
+        <a class="service-link" href="/resumidor_apostilas?token=<%= tokenApostilas %>">
+          <!-- Substitua a imagem pelo ícone desejado -->
+          <img src="/images/resumidor.png" alt="Resumidor de Apostilas">
+          <h2>Resumidor de Apostilas</h2>
+          <p>Resuma seus materiais de estudo de forma rápida e prática.</p>
+        </a>
+      </div>
+    </main>
+    <footer>
+      <p><a class="logout-btn" href="/logout">Sair</a></p>
+    </footer>
+  </div>
+</body>
+</html>
