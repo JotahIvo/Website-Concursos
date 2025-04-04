@@ -40,4 +40,30 @@ router.get('/resumidor_apostilas', isAuthenticated, (req, res) => {
   res.redirect('https://chatgpt.com/g/g-67e4600f0c588191a58ae94d5815fec0-resumidor-de-apostilas');
 });
 
+// Importa seu pool e a query de criação
+const pool = require('../config/db');
+
+const createTableQuery = `
+CREATE TABLE IF NOT EXISTS usuarios (
+  id SERIAL PRIMARY KEY,
+  email VARCHAR(255) NOT NULL UNIQUE,
+  nome VARCHAR(255) NOT NULL,
+  senha VARCHAR(255) NOT NULL
+);
+`;
+
+// Rota protegida para inicializar o banco
+router.get('/init-db', isAuthenticated, async (req, res) => {
+  try {
+    const client = await pool.connect();
+    await client.query(createTableQuery);
+    client.release();
+    res.send("Tabela 'usuarios' criada com sucesso (ou já existia).");
+  } catch (err) {
+    console.error("Erro ao criar a tabela:", err);
+    res.status(500).send("Erro ao criar a tabela.");
+  }
+});
+
+
 module.exports = router;
